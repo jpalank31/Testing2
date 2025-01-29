@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+  </head>
+  <body>
+    Hello! This is for you while I'm gone.
+    <br />
+    <br />
 
+    <button id="myButton">Click me</button>
+
+    <script>
+      const button = document.getElementById("myButton");
+      const targetDate = new Date("2025-01-28T15:37:00");
+
+      function updateButtonState() {
+        const now = new Date();
+        if (now >= targetDate) {
+          button.disabled = false;
+        } else {
+          button.disabled = true;
+        }
+      }
+
+      updateButtonState();
+      setInterval(updateButtonState, 1000);
+    </script>
+  </body>
+</html>
